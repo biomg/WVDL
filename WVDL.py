@@ -21,7 +21,7 @@ import gzip
 import pickle
 import timeit
 import argparse
-
+# GPU or CPU
 if torch.cuda.is_available():
         cuda = True
         #torch.cuda.set_device(1)
@@ -30,7 +30,7 @@ else:
         cuda = False
         print('===> Using CPU')
 
-
+# Filling subsequences with base nucleotide N
 def padding_sequence_new(seq, window_size = 101, repkey = 'N'):
     seq_len = len(seq)
     new_seq = seq
@@ -39,7 +39,7 @@ def padding_sequence_new(seq, window_size = 101, repkey = 'N'):
         new_seq = seq + repkey * gap_len
     return new_seq
 
-
+# Filling entire sequence with base nucleotide N
 def padding_sequence(seq, max_len = 501, repkey = 'N'):
     seq_len = len(seq)
     if seq_len < max_len:
@@ -49,6 +49,7 @@ def padding_sequence(seq, max_len = 501, repkey = 'N'):
         new_seq = seq[:max_len]
     return new_seq
 
+# Convert the sequence into a one-hot coding matrix
 
 def get_RNA_seq_concolutional_array(seq, motif_len = 4):
     seq = seq.replace('U', 'T')
@@ -74,6 +75,7 @@ def get_RNA_seq_concolutional_array(seq, motif_len = 4):
 
     return new_array
 
+# Divide RNA sequence into multiple sub sequences with partial overlap
 
 def split_overlap_seq(seq, window_size):
     overlap_size = 50
@@ -104,7 +106,7 @@ def split_overlap_seq(seq, window_size):
             bag_seqs.append(pad_seq)
     return bag_seqs
 
-
+# Read sequence file
 def read_seq_graphprot(seq_file, label = 1):
     seq_list = []
     labels = []
@@ -120,6 +122,7 @@ def read_seq_graphprot(seq_file, label = 1):
                 labels.append(label)
     return seq_list, labels
 
+# Obtain the processed one-hot coding matrix and corresponding labels
 
 def get_bag_data(data, channel = 7, window_size = 101):
     bags = []
@@ -156,6 +159,7 @@ def get_bag_data_1_channel(data, max_len = 501):
         bags.append(np.array(bag_subt))
     return bags, labels
 
+# Gather positive and negative data together
 
 def read_data_file(posifile, negafile = None, train = True):
     data = dict()
