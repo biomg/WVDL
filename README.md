@@ -1,6 +1,6 @@
-# EDLA
+# WVDL
 Computational algorithms for identifying RNAs that bind to specific RBPs are urgently needed, and they can complement high-cost experimental methods.  <br>
-In this study, we develop a ensemble deep learning approach (EDLA) to predict RBP binding sites.  <br>
+In this study, we propose a weighted voting deep learning (WVDL) to predict RNA-protein binding sites.  <br>
 
 # Dependency:
 python 3.8.5 <br>
@@ -27,4 +27,4 @@ When you train EDLA on your own constructed benchmark dataset, if the training l
 Zhengsen Pan: zhengsenpan@foxmail.com <br>
 
 # Updates:
-19/6/2022 <br>
+11/11/2022 <br>
