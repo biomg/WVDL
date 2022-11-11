@@ -11,7 +11,7 @@ Download the trainig and testing data from http://www.bioinf.uni-freiburg.de/Sof
 It has 24 experiments of 21 RBPs, and we need train one model per experiment. <br>
 
 # Supported GPUs
-Now it supports GPUs. The code support GPUs and CPUs, it automatically check whether you server install GPU or not, it will proritize using the GPUs if there exist GPUs. <br> In addition, MCNN can also be adapted to protein binding sites on DNAs and identify DNA binding speciticity of proteins.  <br>
+Now it supports GPUs. The code support GPUs and CPUs, it automatically check whether you server install GPU or not, it will proritize using the GPUs if there exist GPUs. <br> In addition, WVDL can also be adapted to protein binding sites on DNAs and identify DNA binding speciticity of proteins.  <br>
           
 It supports model training, testing. <br>
 
@@ -21,7 +21,7 @@ python main.py
 The main.py file contains positive and negative training and test sets
 
 # NOTE
-When you train EDLA on your own constructed benchmark dataset, if the training loss cannot converge, may other optimization methods, like SGD or RMSprop can be used to replace Adam in the code.  <br>
+When you train WVDL on your own constructed benchmark dataset, if the training loss cannot converge, may other optimization methods, like SGD or RMSprop can be used to replace Adam in the code.  <br>
 
 # Contact
 Zhengsen Pan: zhengsenpan@foxmail.com <br>
