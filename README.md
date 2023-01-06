@@ -20,6 +20,10 @@ python main.py
 
 The main.py file contains positive and negative training and test sets
 
+python motif.py
+
+Draw the motif pictures from CNN parameters.
+
 # NOTE
 When you train WVDL on your own constructed benchmark dataset, if the training loss cannot converge, may other optimization methods, like SGD or RMSprop can be used to replace Adam in the code.  <br>
 
@@ -27,4 +31,4 @@ When you train WVDL on your own constructed benchmark dataset, if the training l
 Zhengsen Pan: zhengsenpan@foxmail.com <br>
 
 # Updates:
-11/11/2022 <br>
+1/6/2023 <br>
